@@ -111,3 +111,8 @@ def calculate_cgpa(self, grades):
         self.cgpa = sum(grades) / len(grades)
         return f"{self.name}'s CGPA is now {self.cgpa:.2f}"
     return "No grades provided"
+
+# Using Methods
+Oluwadamilare = Student("Oluwadamilare Bello", "Electrical Engineering", 500)
+
+print(Oluwadamilare.pay_school_fees())
