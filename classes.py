@@ -57,9 +57,32 @@ class Student:
         self.cgpa = 0.0
 
 
-Ayomide = Student("Ayomide Bello", "Linguistics", 100, "Ogun State")
+# Ayomide = Student("Ayomide Bello", "Linguistics", 100, "Ogun State")
 
-print(Ayomide.name)      
-print(Ayomide.level)      
-print(Ayomide.course)      
-print(Ayomide.state_of_origin)      
+# print(Ayomide.name)      
+# print(Ayomide.level)      
+# print(Ayomide.course)      
+# print(Ayomide.state_of_origin)
+
+# Types of Attributes
+# Instance Attributes - unique to each objects
+student1 = Student("John Paul", "Hospitality", 500, "Ebonyi State")
+student2 = Student("Abel King", "Management", 500, "Anambra State")
+
+print(student1.name)
+print(student2.course)
+
+# Class Attributes
+class Student:
+    university = "Federal University of Agriculture Abeokuta"
+
+    def __init__(self, name, course):
+        self.name = name
+        self.course = course
+
+print(Student.university)
+print(student1.university)
+print(student2.university)
+
+# Methods
+
