@@ -28,24 +28,38 @@
 # shola = NigerianStudent("Shola John", "Ogun State", "Physics")
 # print(shola.student_id)
 
-# More Example
-class PhoneUser:
-    def __init__(self, name, network):
+# # More Example
+# class PhoneUser:
+#     def __init__(self, name, network):
+#         self.name = name
+#         self.network = network
+#         self.airtime = 0
+#         print(f"{self.name} joned {self.network} network")
+    
+#     def buy_airtime(self, amount):
+#         self.airtime += amount
+#         return f"{self.name} now has {self.airtime} airtime"
+    
+# Dasola = PhoneUser("Dasola", "MTN")
+# Tope = PhoneUser("Temitope", 'Airtel')
+
+# print(Dasola.buy_airtime(500))
+# print(Tope.buy_airtime(12500))
+# print(Tope.airtime)
+    
+# Defining Attributes of a student
+class Student:
+    def __init__(self, name, course, level, state_of_origin):
         self.name = name
-        self.network = network
-        self.airtime = 0
-        print(f"{self.name} joned {self.network} network")
-    
-    def buy_airtime(self, amount):
-        self.airtime += amount
-        return f"{self.name} now has {self.airtime} airtime"
-    
-Dasola = PhoneUser("Dasola", "MTN")
-Tope = PhoneUser("Temitope", 'Airtel')
+        self.course = course
+        self.level = level
+        self.state_of_origin = state_of_origin
+        self.cgpa = 0.0
 
-print(Dasola.buy_airtime(500))
-print(Tope.buy_airtime(12500))
-print(Tope.airtime)
-    
 
-        
+Ayomide = Student("Ayomide Bello", "Linguistics", 100, "Ogun State")
+
+print(Ayomide.name)      
+print(Ayomide.level)      
+print(Ayomide.course)      
+print(Ayomide.state_of_origin)      
