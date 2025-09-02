@@ -18,13 +18,13 @@
 #         self.course = course
 #         self.student_id = self.generate_id()
 #         print(f"{self.name} from {self.state_of_origin} is ready!")
-        
+
 
 #     def generate_id(self):
 #         import random
 #         return f"UNISAIL {random.randint(1000, 9999)}"
-    
-    
+
+
 # shola = NigerianStudent("Shola John", "Ogun State", "Physics")
 # print(shola.student_id)
 
@@ -35,18 +35,18 @@
 #         self.network = network
 #         self.airtime = 0
 #         print(f"{self.name} joned {self.network} network")
-    
+
 #     def buy_airtime(self, amount):
 #         self.airtime += amount
 #         return f"{self.name} now has {self.airtime} airtime"
-    
+
 # Dasola = PhoneUser("Dasola", "MTN")
 # Tope = PhoneUser("Temitope", 'Airtel')
 
 # print(Dasola.buy_airtime(500))
 # print(Tope.buy_airtime(12500))
 # print(Tope.airtime)
-    
+
 # Defining Attributes of a student
 # class Student:
 #     def __init__(self, name, course, level, state_of_origin):
@@ -59,9 +59,9 @@
 
 # Ayomide = Student("Ayomide Bello", "Linguistics", 100, "Ogun State")
 
-# print(Ayomide.name)      
-# print(Ayomide.level)      
-# print(Ayomide.course)      
+# print(Ayomide.name)
+# print(Ayomide.level)
+# print(Ayomide.course)
 # print(Ayomide.state_of_origin)
 
 # Types of Attributes
@@ -94,25 +94,31 @@ class Student:
         self.fees_paid = False
 
 # Method: Action the student can do
-def pay_school_fees(self):
-    self.fees_paid = True
-    return f"{self.name} has paid school fees for {self.level} level"
+
+    def pay_school_fees(self):
+        self.fees_paid = True
+        return f"{self.name} has paid school fees for {self.level} level"
 
 # Method: Another action
-def register_courses(self):
-    if self.fees_paid:
-        return f"{self.name} has registered courses for {self.course} "
-    else:
-        return f"{self.name} must pay school fees first!"
+
+    def register_courses(self):
+        if self.fees_paid:
+            return f"{self.name} has registered courses for {self.course} "
+        else:
+            return f"{self.name} must pay school fees first!"
 
 # Method Calculates CGPA
-def calculate_cgpa(self, grades):
-    if grades:
-        self.cgpa = sum(grades) / len(grades)
-        return f"{self.name}'s CGPA is now {self.cgpa:.2f}"
-    return "No grades provided"
+
+    def calculate_cgpa(self, grades):
+        if grades:
+            self.cgpa = sum(grades) / len(grades)
+            return f"{self.name}'s CGPA is now {self.cgpa:.2f}"
+        return "No grades provided"
+
 
 # Using Methods
 Oluwadamilare = Student("Oluwadamilare Bello", "Electrical Engineering", 500)
 
 print(Oluwadamilare.pay_school_fees())
+print(Oluwadamilare.register_courses())
+print(Oluwadamilare.calculate_cgpa([4.2, 3.8, 4.0, 3.5]))
