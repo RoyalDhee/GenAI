@@ -85,40 +85,91 @@
 # print(student2.university)
 
 # Methods: they define actions object can perform. they are like a function
-class Student:
-    def __init__(self, name, course, level):
-        self.name = name
-        self.course = course
-        self.level = level
-        self.cgpa = 0.0
-        self.fees_paid = False
+# class Student:
+#     def __init__(self, name, course, level):
+#         self.name = name
+#         self.course = course
+#         self.level = level
+#         self.cgpa = 0.0
+#         self.fees_paid = False
 
-# Method: Action the student can do
+# # Method: Action the student can do
 
-    def pay_school_fees(self):
-        self.fees_paid = True
-        return f"{self.name} has paid school fees for {self.level} level"
+#     def pay_school_fees(self):
+#         self.fees_paid = True
+#         return f"{self.name} has paid school fees for {self.level} level"
 
-# Method: Another action
+# # Method: Another action
 
-    def register_courses(self):
-        if self.fees_paid:
-            return f"{self.name} has registered courses for {self.course} "
-        else:
-            return f"{self.name} must pay school fees first!"
+#     def register_courses(self):
+#         if self.fees_paid:
+#             return f"{self.name} has registered courses for {self.course} "
+#         else:
+#             return f"{self.name} must pay school fees first!"
 
-# Method Calculates CGPA
+# # Method Calculates CGPA
 
-    def calculate_cgpa(self, grades):
-        if grades:
-            self.cgpa = sum(grades) / len(grades)
-            return f"{self.name}'s CGPA is now {self.cgpa:.2f}"
-        return "No grades provided"
+#     def calculate_cgpa(self, grades):
+#         if grades:
+#             self.cgpa = sum(grades) / len(grades)
+#             return f"{self.name}'s CGPA is now {self.cgpa:.2f}"
+#         return "No grades provided"
+
+#     def academic_calender(self):
+#         return f"Academic calender runs from spetember to July"
 
 
-# Using Methods
-Oluwadamilare = Student("Oluwadamilare Bello", "Electrical Engineering", 500)
+# # Using Methods
+# Oluwadamilare = Student("Oluwadamilare Bello", "Electrical Engineering", 500)
 
-print(Oluwadamilare.pay_school_fees())
-print(Oluwadamilare.register_courses())
-print(Oluwadamilare.calculate_cgpa([4.2, 3.8, 4.0, 3.5]))
+# print(Oluwadamilare.pay_school_fees())
+# print(Oluwadamilare.register_courses())
+# print(Oluwadamilare.calculate_cgpa([4.2, 3.8, 4.0, 3.5]))
+
+
+class BankAccount:
+    def __init__(self, owner, bank_name, balance=0):
+        # Attributes that the account has
+        self.owner = owner
+        self.bank_name = bank_name
+        self.balance = balance
+        self.account_number = self.generate_account_number()
+
+# Method - What the account can do
+    def deposit(self, amount):
+        """"Add money to the account"""
+        if amount > 0:
+            self.balance += amount  # Method changes attribute
+            return f"₦{amount:} deposited to {self.owner}'s {self.bank_name} account. New balance: ₦{self.balance}"
+        return f"Invalid deposit amount"
+
+    def withdraw(self, amount):
+        """Remove money from the account"""
+        if amount > 0 and amount <= self.balance:
+            self.balance -= amount
+            return f"₦{amount:} has been withdrawn from {self.owner}'s account. New balance: ₦{self.balance}"
+        return f"Invalid amount or Inssufecient fund"
+
+    def transfer(self, amount):
+        """Transfer money from account"""
+        if amount > 0 and amount <= self.balance:
+            self.balance -= amount
+            return f"₦{amount:} has been transferred from {self.owner}'s acoount. New balance: ₦{self.balance}"
+        return "Transfer failed: Insuffecient funds"
+
+    def check_balance(self):
+        """Check Balance"""
+        return f"{self.owner}'s {self.bank_name} account balance is ₦{self.balance:}"
+
+    def generate_account_number(self):
+        """Generate a unique account number """
+        import random
+        return f"01{random.randint(10000000, 99999999)}"
+
+
+# Creating and using the element
+ayomide_account = BankAccount("Ayomide Bello", "Wema Bank", 60000)
+
+print(f"owner: {ayomide_account.owner}")
+print(f"Bank: {ayomide_account.bank_name}")
+print(f"Account Number: {ayomide_account.account_number}")
